@@ -13,7 +13,18 @@ const colors = {
   },
 };
 
-const theme = extendTheme({ colors });
+const theme = extendTheme({
+  colors,
+  styles: {
+    global: {
+      "html, body": {
+        background: "linear-gradient(to bottom right, #ffdab9, #dda0dd)",
+        minHeight: "100vh",
+        width: "100vw",
+      },
+    },
+  },
+});
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
