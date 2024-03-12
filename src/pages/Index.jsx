@@ -1,4 +1,4 @@
-import { Box, Button, Container, Flex, FormControl, FormLabel, Heading, Input, Stack, Text, Textarea, VStack, List, ListItem } from "@chakra-ui/react";
+import { Box, Button, Container, Flex, FormControl, FormLabel, Heading, Input, Stack, Text, Textarea, VStack, List, ListItem, useStyleConfig } from "@chakra-ui/react";
 import { useState } from "react";
 import { FaMusic, FaPaperPlane, FaStar } from "react-icons/fa";
 
@@ -25,8 +25,10 @@ const Index = () => {
     };
     setSongSuggestions([...songSuggestions, newSong]);
   };
+  const styles = useStyleConfig("GlobalStyles", {});
+
   return (
-    <Container maxW="container.xl" p={5}>
+    <Container maxW="container.xl" p={5} sx={styles}>
       <VStack spacing={10}>
         <Heading as="h1" size="2xl" color="brand.900" textAlign="center">
           Weekend Getaway!
