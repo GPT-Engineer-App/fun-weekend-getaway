@@ -34,7 +34,7 @@ const Index = () => {
         <Text fontSize="xl" color="gray.600" textAlign="center">
           Join us for an unforgettable adventure with friends. Let's make some memories!
         </Text>
-        <Box p={5} borderRadius="lg" bgColor="#0A1128" color="black" textAlign="center">
+        <Box p={5} borderRadius="lg" bgColor="#0A1128" color="white" textAlign="center">
           <Heading as="h3" size="lg">
             Trip Details
           </Heading>
@@ -45,7 +45,7 @@ const Index = () => {
         </Box>
 
         <Flex direction={{ base: "column", md: "row" }} gap={10}>
-          <Box w={{ base: "100%", md: "50%" }} bgColor="#0A1128" p={5} borderRadius="lg">
+          <Box w={{ base: "100%", md: "50%" }} bgColor="#0A1128" p={5} borderRadius="lg" color="white">
             <form onSubmit={handleActivitySubmit}>
               <VStack spacing={4}>
                 <Heading as="h4" size="md" color="white">
@@ -66,7 +66,7 @@ const Index = () => {
             </form>
           </Box>
 
-          <Box w={{ base: "100%", md: "50%" }} bgColor="#0A1128" p={5} borderRadius="lg" display="flex" flexDirection="column" justifyContent="space-between">
+          <Box w={{ base: "100%", md: "50%" }} bgColor="#0A1128" p={5} borderRadius="lg" display="flex" flexDirection="column" justifyContent="space-between" color="white">
             <form onSubmit={handleSongSubmit} style={{ display: "flex", flexDirection: "column", height: "100%" }}>
               <VStack spacing={4} flex={1}>
                 <Heading as="h4" size="md" color="white">
