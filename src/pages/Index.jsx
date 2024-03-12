@@ -59,7 +59,7 @@ const Index = () => {
                   <FormLabel>Description</FormLabel>
                   <Textarea placeholder="What's this activity about?" name="activity_description" />
                 </FormControl>
-                <Button colorScheme="teal" variant="solid" rightIcon={<FaPaperPlane />} type="submit">
+                <Button colorScheme="teal" variant="solid" rightIcon={<FaPaperPlane />} type="submit" w="full">
                   Submit
                 </Button>
               </VStack>
@@ -80,7 +80,7 @@ const Index = () => {
                   <FormLabel>Artist</FormLabel>
                   <Input placeholder="Who's the artist?" name="artist_name" />
                 </FormControl>
-                <Button colorScheme="brand" variant="solid" rightIcon={<FaPaperPlane />} type="submit">
+                <Button colorScheme="brand" variant="solid" rightIcon={<FaPaperPlane />} type="submit" w="full">
                   Add Song
                 </Button>
               </VStack>
