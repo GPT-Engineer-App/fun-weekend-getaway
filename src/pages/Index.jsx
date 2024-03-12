@@ -66,9 +66,9 @@ const Index = () => {
             </form>
           </Box>
 
-          <Box w={{ base: "100%", md: "50%" }} bgColor="brand.600" p={5} borderRadius="lg">
-            <form onSubmit={handleSongSubmit}>
-              <VStack spacing={4}>
+          <Box w={{ base: "100%", md: "50%" }} bgColor="brand.600" p={5} borderRadius="lg" display="flex" flexDirection="column" justifyContent="space-between">
+            <form onSubmit={handleSongSubmit} style={{ display: "flex", flexDirection: "column", height: "100%" }}>
+              <VStack spacing={4} flex={1}>
                 <Heading as="h4" size="md" color="white">
                   Add to Playlist <FaMusic />
                 </Heading>
