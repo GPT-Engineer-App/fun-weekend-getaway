@@ -28,13 +28,13 @@ const Index = () => {
   return (
     <Container maxW="container.xl" p={5}>
       <VStack spacing={10}>
-        <Heading as="h1" size="2xl" color="brand.900" textAlign="center">
+        <Heading as="h1" size="2xl" color="#0A1128" textAlign="center">
           Weekend Getaway!
         </Heading>
         <Text fontSize="xl" color="gray.600" textAlign="center">
           Join us for an unforgettable adventure with friends. Let's make some memories!
         </Text>
-        <Box p={5} borderRadius="lg" bgColor="brand.800" color="white" textAlign="center">
+        <Box p={5} borderRadius="lg" bgColor="#0A1128" color="black" textAlign="center">
           <Heading as="h3" size="lg">
             Trip Details
           </Heading>
@@ -45,7 +45,7 @@ const Index = () => {
         </Box>
 
         <Flex direction={{ base: "column", md: "row" }} gap={10}>
-          <Box w={{ base: "100%", md: "50%" }} bgColor="brand.700" p={5} borderRadius="lg">
+          <Box w={{ base: "100%", md: "50%" }} bgColor="#0A1128" p={5} borderRadius="lg">
             <form onSubmit={handleActivitySubmit}>
               <VStack spacing={4}>
                 <Heading as="h4" size="md" color="white">
@@ -66,7 +66,7 @@ const Index = () => {
             </form>
           </Box>
 
-          <Box w={{ base: "100%", md: "50%" }} bgColor="brand.600" p={5} borderRadius="lg" display="flex" flexDirection="column" justifyContent="space-between">
+          <Box w={{ base: "100%", md: "50%" }} bgColor="#0A1128" p={5} borderRadius="lg" display="flex" flexDirection="column" justifyContent="space-between">
             <form onSubmit={handleSongSubmit} style={{ display: "flex", flexDirection: "column", height: "100%" }}>
               <VStack spacing={4} flex={1}>
                 <Heading as="h4" size="md" color="white">
