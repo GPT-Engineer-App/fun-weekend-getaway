@@ -1,7 +1,30 @@
-import { Box, Button, Container, Flex, FormControl, FormLabel, Heading, Input, Stack, Text, Textarea, VStack } from "@chakra-ui/react";
+import { Box, Button, Container, Flex, FormControl, FormLabel, Heading, Input, Stack, Text, Textarea, VStack, List, ListItem } from "@chakra-ui/react";
+import { useState } from "react";
 import { FaMusic, FaPaperPlane, FaStar } from "react-icons/fa";
 
 const Index = () => {
+  const [activitySuggestions, setActivitySuggestions] = useState([]);
+  const [songSuggestions, setSongSuggestions] = useState([]);
+
+  const handleActivitySubmit = (event) => {
+    event.preventDefault();
+    const formData = new FormData(event.target);
+    const newActivity = {
+      name: formData.get("activity_name"),
+      description: formData.get("activity_description"),
+    };
+    setActivitySuggestions([...activitySuggestions, newActivity]);
+  };
+
+  const handleSongSubmit = (event) => {
+    event.preventDefault();
+    const formData = new FormData(event.target);
+    const newSong = {
+      title: formData.get("song_title"),
+      artist: formData.get("artist_name"),
+    };
+    setSongSuggestions([...songSuggestions, newSong]);
+  };
   return (
     <Container maxW="container.xl" p={5}>
       <VStack spacing={10}>
@@ -23,18 +46,18 @@ const Index = () => {
 
         <Flex direction={{ base: "column", md: "row" }} gap={10}>
           <Box w={{ base: "100%", md: "50%" }} bgColor="brand.700" p={5} borderRadius="lg">
-            <form>
+            <form onSubmit={handleActivitySubmit}>
               <VStack spacing={4}>
                 <Heading as="h4" size="md" color="white">
                   Suggest an Activity <FaStar />
                 </Heading>
                 <FormControl id="activity_name">
                   <FormLabel>Name</FormLabel>
-                  <Input placeholder="Activity name" />
+                  <Input placeholder="Activity name" name="activity_name" />
                 </FormControl>
                 <FormControl id="activity_description">
                   <FormLabel>Description</FormLabel>
-                  <Textarea placeholder="What's this activity about?" />
+                  <Textarea placeholder="What's this activity about?" name="activity_description" />
                 </FormControl>
                 <Button colorScheme="teal" variant="solid" rightIcon={<FaPaperPlane />} type="submit">
                   Submit
@@ -44,18 +67,18 @@ const Index = () => {
           </Box>
 
           <Box w={{ base: "100%", md: "50%" }} bgColor="brand.600" p={5} borderRadius="lg">
-            <form>
+            <form onSubmit={handleSongSubmit}>
               <VStack spacing={4}>
                 <Heading as="h4" size="md" color="white">
                   Add to Playlist <FaMusic />
                 </Heading>
                 <FormControl id="song_title">
                   <FormLabel>Song Title</FormLabel>
-                  <Input placeholder="What's the jam?" />
+                  <Input placeholder="What's the jam?" name="song_title" />
                 </FormControl>
                 <FormControl id="artist_name">
                   <FormLabel>Artist</FormLabel>
-                  <Input placeholder="Who's the artist?" />
+                  <Input placeholder="Who's the artist?" name="artist_name" />
                 </FormControl>
                 <Button colorScheme="brand" variant="solid" rightIcon={<FaPaperPlane />} type="submit">
                   Add Song
@@ -65,6 +88,33 @@ const Index = () => {
           </Box>
         </Flex>
       </VStack>
+      <Box w="100%" p={5}>
+        <Heading as="h3" size="lg" color="brand.900" textAlign="center">
+          Submitted Activity Suggestions
+        </Heading>
+        <List spacing={3}>
+          {activitySuggestions.map((activity, index) => (
+            <ListItem key={index} bgColor="brand.700" p={3} borderRadius="md">
+              <Text fontWeight="bold">{activity.name}</Text>
+              <Text>{activity.description}</Text>
+            </ListItem>
+          ))}
+        </List>
+      </Box>
+
+      <Box w="100%" p={5}>
+        <Heading as="h3" size="lg" color="brand.900" textAlign="center">
+          Submitted Song Suggestions
+        </Heading>
+        <List spacing={3}>
+          {songSuggestions.map((song, index) => (
+            <ListItem key={index} bgColor="brand.600" p={3} borderRadius="md">
+              <Text fontWeight="bold">{song.title}</Text>
+              <Text>by {song.artist}</Text>
+            </ListItem>
+          ))}
+        </List>
+      </Box>
     </Container>
   );
 };
