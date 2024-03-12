@@ -34,7 +34,7 @@ const Index = () => {
         <Text fontSize="xl" color="gray.600" textAlign="center">
           Join us for an unforgettable adventure with friends. Let's make some memories!
         </Text>
-        <Box p={5} borderRadius="lg" bgColor="#0A1128" color="white" textAlign="center">
+        <Box p={5} borderRadius="lg" bgColor="#0A1128" color="white" textAlign="center" w="100%">
           <Heading as="h3" size="lg">
             Trip Details
           </Heading>
