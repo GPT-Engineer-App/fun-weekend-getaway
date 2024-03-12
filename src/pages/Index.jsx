@@ -5,13 +5,13 @@ const Index = () => {
   return (
     <Container maxW="container.xl" p={5}>
       <VStack spacing={10}>
-        <Heading as="h1" size="2xl" color="teal.400" textAlign="center">
+        <Heading as="h1" size="2xl" color="brand.900" textAlign="center">
           Weekend Getaway!
         </Heading>
         <Text fontSize="xl" color="gray.600" textAlign="center">
           Join us for an unforgettable adventure with friends. Let's make some memories!
         </Text>
-        <Box p={5} borderRadius="lg" bgColor="purple.500" color="white" textAlign="center">
+        <Box p={5} borderRadius="lg" bgColor="brand.800" color="white" textAlign="center">
           <Heading as="h3" size="lg">
             Trip Details
           </Heading>
@@ -22,7 +22,7 @@ const Index = () => {
         </Box>
 
         <Flex direction={{ base: "column", md: "row" }} gap={10}>
-          <Box w={{ base: "100%", md: "50%" }} bgColor="orange.300" p={5} borderRadius="lg">
+          <Box w={{ base: "100%", md: "50%" }} bgColor="brand.700" p={5} borderRadius="lg">
             <form>
               <VStack spacing={4}>
                 <Heading as="h4" size="md" color="white">
@@ -43,7 +43,7 @@ const Index = () => {
             </form>
           </Box>
 
-          <Box w={{ base: "100%", md: "50%" }} bgColor="blue.300" p={5} borderRadius="lg">
+          <Box w={{ base: "100%", md: "50%" }} bgColor="brand.600" p={5} borderRadius="lg">
             <form>
               <VStack spacing={4}>
                 <Heading as="h4" size="md" color="white">
@@ -57,7 +57,7 @@ const Index = () => {
                   <FormLabel>Artist</FormLabel>
                   <Input placeholder="Who's the artist?" />
                 </FormControl>
-                <Button colorScheme="pink" variant="solid" rightIcon={<FaPaperPlane />} type="submit">
+                <Button colorScheme="brand" variant="solid" rightIcon={<FaPaperPlane />} type="submit">
                   Add Song
                 </Button>
               </VStack>
